@@ -1,0 +1,8 @@
+google-generativeai
+python-dotenv
+PyPDF2
+fastapi
+uvicorn
+python-multipart
+reportlab
+pdf2image
