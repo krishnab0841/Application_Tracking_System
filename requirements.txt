@@ -1,6 +1,9 @@
-google-generativeai
+groq
+streamlit
 python-dotenv
 PyPDF2
+python-docx
+fpdf2
 fastapi
 uvicorn
 python-multipart

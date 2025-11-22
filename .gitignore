@@ -5,37 +5,29 @@ __pycache__/
 *.so
 .Python
 venv/
-.venv/
 env/
 ENV/
 
 # Environment variables
 .env
-.env.local
 
 # IDEs
 .vscode/
 .idea/
 *.swp
 *.swo
-*~
+
+# Node modules
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Test files
-test_*.py
-list_models.py
-models_output.txt
-
-# Node modules (frontend)
-frontend/node_modules/
-frontend/dist/
-frontend/.vite/
-
-# Logs
+# Temporary files
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+*.tmp
+models_output.txt

@@ -42,12 +42,40 @@ body::before {
 #root {
   position: relative;
   z-index: 1;
-  padding: 1.5rem;
+  padding: 0.8rem;
   max-width: 1600px;
   margin: 0 auto;
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* Main Title */
+.main-title {
+  text-align: center;
+  margin: 0 0 1rem 0;
+  padding: 0.8rem;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(167, 139, 250, 0.3);
+}
+
+.main-title h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a78bfa 0%, #ec4899 50%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.main-title p {
+  margin: 0.3rem 0 0 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 400;
 }
 
 .app-wrapper {
@@ -59,9 +87,9 @@ body::before {
 /* Two Column Layout */
 .two-column-layout {
   display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: 1.5rem;
-  height: 100%;
+  grid-template-columns: 350px 1fr;
+  gap: 1rem;
+  height: calc(100% - 80px);
 }
 
 @media (max-width: 1024px) {
@@ -84,7 +112,7 @@ body::before {
 .left-panel {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 0.8rem;
   height: 100%;
 }
 
@@ -161,20 +189,20 @@ body::before {
 
 .check-score-btn {
   width: 100%;
-  padding: 1.2rem;
+  padding: 0.9rem;
   background: linear-gradient(135deg, #7c3aed 0%, #9333ea 100%);
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
+  gap: 0.6rem;
   transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.5);
 }
 
 .check-score-btn:hover {
@@ -191,18 +219,20 @@ body::before {
 .right-panel {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 0.8rem;
   height: 100%;
   overflow: hidden;
 }
 
 .display-area {
   flex: 1;
-  max-height: 45%;
+  min-height: 300px;
+  max-height: calc(55vh - 200px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   overflow-y: auto;
+  padding: 1rem;
 }
 
 .placeholder-content {
@@ -214,7 +244,7 @@ body::before {
 .tools-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 0.7rem;
   height: auto;
 }
 
@@ -279,20 +309,21 @@ body::before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  padding: 1rem 0.8rem;
-  min-height: 115px;
+  gap: 0.4rem;
+  padding: 0.7rem 0.6rem;
+  min-height: 85px;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(167, 139, 250, 0.4);
   position: relative;
+  background: rgba(124, 58, 237, 0.08);
 }
 
 .tool-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateY(-4px);
+  background: rgba(124, 58, 237, 0.15);
+  transform: translateY(-3px);
   border-color: var(--tool-color);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
 .tool-icon {
@@ -303,7 +334,7 @@ body::before {
 }
 
 .tool-btn span {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-align: center;
 }
@@ -367,37 +398,46 @@ body::before {
 }
 
 .score-circle {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  background: conic-gradient(#7c3aed, rgba(255, 255, 255, 0.1));
+  background: conic-gradient(#a78bfa 0%, #ec4899 50%, #7c3aed 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
   margin: 0 auto 1.5rem;
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .score-circle::before {
   content: '';
   position: absolute;
-  width: 100px;
-  height: 100px;
-  background: #1a0b2e;
+  width: 115px;
+  height: 115px;
+  background: linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 100%);
   border-radius: 50%;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .score-value {
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 3.2rem;
+  font-weight: 900;
   z-index: 1;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(167, 139, 250, 0.8), 0 0 10px rgba(236, 72, 153, 0.6), 0 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: -0.02em;
 }
 
 .score-label {
   z-index: 1;
-  color: var(--text-secondary);
-  font-size: 0.85rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .tags {

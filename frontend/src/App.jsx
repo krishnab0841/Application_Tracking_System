@@ -82,6 +82,12 @@ function App() {
 
   return (
     <div className="app-wrapper">
+      {/* Main Title */}
+      <div className="main-title">
+        <h1>🎯 Smart ATS - Resume Optimizer</h1>
+        <p>AI-Powered Resume Analysis & Optimization System</p>
+      </div>
+
       <div className="two-column-layout">
         {/* Left Panel */}
         <div className="left-panel">
